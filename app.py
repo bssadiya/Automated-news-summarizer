@@ -13,7 +13,7 @@ app = Flask(__name__)
 try:
     summarizer = pipeline("summarization")  # default model
 except Exception as e:
-    print("❌ Summarizer pipeline failed:", e)
+    print(" Summarizer pipeline failed:", e)
     summarizer = None
 
 # Helper Functions 
@@ -53,12 +53,12 @@ def safe_request(url):
         if response.status_code == 200:
             return response.json().get("articles", [])
     except requests.exceptions.RequestException as e:
-        print("❌ Request failed:", e)
+        print("Request failed:", e)
     # fallback sample data
     return [{"title": "Sample News", "description": "Sample description.", "summary": "Sample description."}]
 
 #  News Fetch 
-API_KEY = "41720d26e28a460ba1ca9d8772ee1dac"
+API_KEY = "your api"
 
 def get_news(category="general", page=1):
     url = f"https://newsapi.org/v2/top-headlines?category={category}&page={page}&pageSize=10&apiKey={API_KEY}"
@@ -125,4 +125,4 @@ if __name__ == "__main__":
     try:
         app.run(debug=True, port=5000)
     except Exception as e:
-        print("❌ Flask failed to start:", e)
+        print("Flask failed to start:", e)
