@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Aggregator - {{ category | capitalize }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>News Aggregator</h1>
+    <div class="nav-links">
+      <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+        <div class="dropdown-content">
+          {% for cat in categories %}
+          <a href="/?category={{ cat }}">{{ cat.capitalize() }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <a href="/about" class="nav-link">About</a>
+      <a href="/search" class="nav-link">Search</a>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- News Container -->
+  <div class="news-container">
+    {% for article in news_articles %}
+    <div class="news-card">
+      {% if article.title %}<h2>{{ article.title }}</h2>{% endif %}
+      {% if article.urlToImage %}<img src="{{ article.urlToImage }}" alt="Article Image">{% endif %}
+      {% if article.summary %}<p><b>Summary:</b> {{ article.summary }}</p>{% endif %}
+      {% if article.description %}<p><b>Description:</b> {{ article.description }}</p>{% endif %}
+
+      {% if article.evaluation %}
+        <p><b>BLEU:</b> {{ article.evaluation.bleu | round(2) }}</p>
+        <p><b>ROUGE-1:</b> {{ article.evaluation.rouge1 | round(2) }}</p>
+        <p><b>ROUGE-L:</b> {{ article.evaluation.rougeL | round(2) }}</p>
+      {% endif %}
+
+      {% if article.source and article.source.name %}
+        <p><b>Source:</b> <a href="{{ article.url }}" target="_blank">{{ article.source.name }}</a></p>
+      {% endif %}
+      {% if article.author %}<p><b>Author:</b> {{ article.author }}</p>{% endif %}
+      {% if article.publishedAt %}<p><b>Published At:</b> {{ article.publishedAt }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    {% if page > 1 %}
+      <a href="/?category={{ category }}&page={{ page-1 }}">Prev</a>
+    {% endif %}
+    <span>Page {{ page }}</span>
+    <a href="/?category={{ category }}&page={{ page+1 }}">Next</a>
+  </div>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggleSwitch = document.getElementById("darkModeToggle");
+    toggleSwitch.addEventListener("change", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>
