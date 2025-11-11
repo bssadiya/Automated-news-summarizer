@@ -75,20 +75,7 @@ def get_news(category="general", page=1):
 
     return articles
 
-# def get_news_for_search(query, page=1):
-#     url = f"https://newsapi.org/v2/everything?q={query}&page={page}&pageSize=10&apiKey={API_KEY}"
-#     articles = safe_request(url)
-    
-#     for article in articles:
-#         description = article.get('description', "")
-#         summary = summarize_text(description)
-#         article['summary'] = summary
-#         if description != summary:
-#             article['evaluation'] = evaluate_summary(description, summary)
-#         else:
-#             article['evaluation'] = None
 
-#     return articles
 
 
 def get_news_for_search(query, page=1):
