@@ -1,4 +1,4 @@
-***Automated News Summarizer****
+**Automated News Summarizer**
 This project is a Flask-based web application that gathers the latest news from different categories and generates short, 
 AI-driven summaries for each article. It also evaluates how accurate and meaningful each summary is by comparing it with the original description using BLEU and ROUGE scores. 
 The idea behind this project is to make news consumption quicker and smarter by giving readers the key points without needing to read the full article.
