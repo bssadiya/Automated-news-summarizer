@@ -74,13 +74,3 @@ http://127.0.0.1:5000/
 * End-to-end pipeline: data collection → summarization → evaluation → display
 * Integrated evaluation metrics rarely seen in student projects
 * Strong combination of NLP and web development
-
-
-
-
-
-* Make this **shorter for GitHub**
-* Create a **submission-ready README**
-* Add **badges and tech stack icons**
-
-Just say 👍
