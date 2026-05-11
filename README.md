@@ -68,9 +68,3 @@ http://127.0.0.1:5000/
 ### Categories
 <img width="737" height="347" alt="image" src="https://github.com/user-attachments/assets/c6d7aa4b-fba3-4aff-9024-4fdd3a45efca" />
 
-##  Project Highlights
-
-* Real-time NLP application using live news data
-* End-to-end pipeline: data collection → summarization → evaluation → display
-* Integrated evaluation metrics rarely seen in student projects
-* Strong combination of NLP and web development
