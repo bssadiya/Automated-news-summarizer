@@ -88,19 +88,18 @@ Rendered Frontend UI
 
 # Project Screenshots
 
-## Home Page
+## Output Preview
 
-![Home Page](output1.jpg)
+### Home Page (News Categories)
 
-## News Summarization Output
+<img width="738" height="318" alt="image" src="https://github.com/user-attachments/assets/13a9a19c-50a7-41f3-afcc-fa92e63fc689" />
 
-![Summarization Output](output2.jpg)
+###  Search Functionality Output
+<img width="738" height="355" alt="image" src="https://github.com/user-attachments/assets/573da5fa-b2fe-43b1-befc-2946894e5380" />
 
-## Search Functionality
+### Categories
+<img width="737" height="347" alt="image" src="https://github.com/user-attachments/assets/c6d7aa4b-fba3-4aff-9024-4fdd3a45efca" />
 
-![Search Feature](output3.jpg)
-
----
 
 # Installation & Setup
 
