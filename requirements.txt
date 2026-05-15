@@ -1,0 +1,9 @@
+flask
+requests
+transformers
+torch
+nltk
+rouge-score
+gunicorn
+sentencepiece
+python-dotenv
