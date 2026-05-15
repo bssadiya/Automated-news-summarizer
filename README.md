@@ -1,4 +1,6 @@
 #  AI-Based News Summarization & Evaluation Web Application
+## Live Demo
+https://automated-news-summarizer.onrender.com
 
 ## Project Overview
 
