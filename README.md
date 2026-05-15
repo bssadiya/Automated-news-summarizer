@@ -244,16 +244,6 @@ Metrics Implemented:
 
 ---
 
-# Resume-Oriented Highlights
-
-* Developed and deployed an AI-powered full-stack news summarization platform using Flask, Hugging Face Transformers, and NewsAPI.
-* Implemented NLP evaluation metrics including BLEU and ROUGE for generated summary assessment.
-* Designed responsive frontend architecture with category-based filtering and search functionality.
-* Integrated cloud deployment pipeline using Render and Gunicorn.
-* Optimized transformer inference using lightweight DistilBART architecture for deployment compatibility.
-
----
-
 # Author
 
 ## B. S. Sadiya
@@ -268,6 +258,3 @@ GitHub: [https://github.com/bssadiya](https://github.com/bssadiya)
 # License
 
 This project is developed for educational, research, and portfolio purposes.
-
-
-
