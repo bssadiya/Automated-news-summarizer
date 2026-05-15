@@ -4,14 +4,17 @@ from transformers import pipeline
 import os
 from nltk.translate.bleu_score import sentence_bleu
 from rouge_score import rouge_scorer
-
+from dotenv import load_dotenv
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  # hides TF logs
-
+load_dotenv()
 app = Flask(__name__)
 
 # Model 
 try:
-    summarizer = pipeline("summarization")  # default model
+    summarizer = pipeline(
+    "summarization",
+    model="sshleifer/distilbart-cnn-12-6"
+)
 except Exception as e:
     print(" Summarizer pipeline failed:", e)
     summarizer = None
@@ -58,7 +61,7 @@ def safe_request(url):
     return [{"title": "Sample News", "description": "Sample description.", "summary": "Sample description."}]
 
 #  News Fetch 
-API_KEY = "your api"
+API_KEY = os.getenv("NEWS_API_KEY")
 
 def get_news(category="general", page=1):
     url = f"https://newsapi.org/v2/top-headlines?category={category}&page={page}&pageSize=10&apiKey={API_KEY}"
@@ -110,6 +113,6 @@ def search():
 # Run App
 if __name__ == "__main__":
     try:
-        app.run(debug=True, port=5000)
+        app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
     except Exception as e:
         print("Flask failed to start:", e)
